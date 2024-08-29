@@ -1,4 +1,4 @@
-import LoginElementsScreen from "./login.elements.screen.ts";
+import LoginElementsScreen from "./login.elements.screen.ts"
 
 export default class LoginInteractionsScreen extends LoginElementsScreen {
 
