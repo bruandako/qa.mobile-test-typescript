@@ -15,24 +15,11 @@ describe('Wikipedia', () => {
     it('[WIKIPEDIA-02] - Validar mensagem de login inválido', async () => {
 
         await onboardingActions.clickBtnSkip()
-
-        //clicar 'Mais'
         await moreActions.clickBtnMore()
-
-        //clicar em Entrar/Juntar-se
         await loginOrCreatAccountActions.clickLogin()
-
-        //Clicar em Entrar
         await loginOrCreatAccountActions.clickBtnLogin()
-
-        //Preencher nome de usuário e senha
-        await loginAction.setUsername(wikipedia02.userName)
-        await loginAction.setPassword(wikipedia02.password)
-
-        //Clicar em Entrar
+        await loginAction.toLogin(wikipedia02)
         await loginAction.clickBtnLogin()
-
-        //Validar mensagem de login incorreto
         await loginQuestion.getMessage('O nome de utilizador ou a palavra-passe inseridos estão incorretos.\nTente novamente, por favor.')
     })
 })
